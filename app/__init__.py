@@ -22,7 +22,7 @@ def create_app(config_name):
     app.register_blueprint(main_blueprint)
 
     #Setting config
-    from .requests import show_all_pitches
+    #from .requests import show_all_pitches
 
     #Will add views and forms
 
