@@ -5,12 +5,16 @@ from . import main
 from ..models import Pitch, User
 from .. import db
 
+
+
 @main.route('/')
 def index():
     '''
     Function to display index page
     '''
     pitches = Pitch.load_pitches()
-    
-    return render_template('index.html', pitches=pitches)
+    print(pitches)
+    testtext = "Let me see if this works"
+
+    return render_template('index.html', testtext = testtext, pitches = pitches)
 

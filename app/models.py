@@ -14,7 +14,7 @@ class Pitch(db.Model):
     category = db.Column(db.String(255), index=True)
     
     def load_pitches():
-        return Pitches.query.all()
+        return Pitch.query.all()
     
     def __repr__(self):
         return f'Pitch {self.title}'

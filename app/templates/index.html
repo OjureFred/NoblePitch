@@ -8,18 +8,13 @@
 <link rel="stylesheet" href="{{url_for('static', filename = 'css/index.css')}}">
 {% endblock %}
 
+<body>
 <!-- Content Block -->
+{{ texttext }}
 {% for pitch in pitches %}
-<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 review-card">
-    <h2> {{ pitch.title}} </h2>
-    <p> {{ pitch.description }}</p>
-    <p>{{ pitch.category}}</p>
-</div>
 
-{% end for %}
+<li>{{pitch['title']}}</li>
 
-{% block content %}
+{% endfor %}
 
-{{ message}}
-
-{% endblock %}
+</body>
