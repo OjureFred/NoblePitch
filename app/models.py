@@ -17,7 +17,7 @@ class Pitch(db.Model):
         return Pitch.query.all()
     
     def __repr__(self):
-        return f'Pitch {self.title}'
+        return f'Pitch - {self.title}'
 
 class User(UserMixin, db.Model):
     '''

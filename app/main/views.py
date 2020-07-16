@@ -12,9 +12,12 @@ def index():
     '''
     Function to display index page
     '''
-    pitches = Pitch.load_pitches()
-    print(pitches)
-    testtext = "Let me see if this works"
+    pitch_list = Pitch.load_pitches()
 
-    return render_template('index.html', testtext = testtext, pitches = pitches)
+    for pitch in pitch_list:
+        print(pitch)
+        
+    
+
+    return render_template('index.html',  pitch_list = pitch_list)
 
