@@ -11,7 +11,10 @@ class Pitch(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(255), index=True)
     description = db.Column(db.String(2000), index=True)
-    category = db.Column(db.String(255), index = True)
+    category = db.Column(db.String(255), index=True)
+    
+    def load_pitches():
+        return Pitches.query.all()
     
     def __repr__(self):
         return f'Pitch {self.title}'
@@ -44,11 +47,6 @@ class User(UserMixin, db.Model):
     @login_manager.user_loader
     def load_user(user_id):
         return User.query.get(int(user_id))
-
-   
-
-    
-
 class Role(db.Model):
     '''
     Class to define Role Object and table

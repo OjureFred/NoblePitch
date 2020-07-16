@@ -9,6 +9,14 @@
 {% endblock %}
 
 <!-- Content Block -->
+{% for pitch in pitches %}
+<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 review-card">
+    <h2> {{ pitch.title}} </h2>
+    <p> {{ pitch.description }}</p>
+    <p>{{ pitch.category}}</p>
+</div>
+
+{% end for %}
 
 {% block content %}
 
