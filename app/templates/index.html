@@ -26,11 +26,16 @@
                   <hr />
                   <footer class="blockquote-footer"> - <cite>{{ pitch.category }} pitch </cite></footer>
                   <a href="/pitch/{{pitch.id}}" class="btn btn-primary">See Comments</a>
+                  
                 </div>
               </div>
             </div>
     
 {% endfor %}
+</div>
+<div class="row">
+  <br/>
+<a href="/pitch/new/" class="btn btn-success">Add a new Pitch</a>
 </div>
 {% endblock %}
 
