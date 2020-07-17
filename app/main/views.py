@@ -12,8 +12,7 @@ def index():
     '''
     pitch_list = Pitch.query.all()
 
-    for pitch in pitch_list:
-          
+       
     return render_template('index.html', pitch_list=pitch_list)
 
 @main.route('/pitch/comment/new/<int:id>', methods=['GET', 'POST'])
