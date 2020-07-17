@@ -23,6 +23,9 @@
           <p class="card-text lead text-success"><i>{{ pitch.description}}</i></p>
           <hr />
           <footer class="blockquote-footer"> - <cite>{{ pitch.category }} pitch </cite></footer>
+
+          <br />
+          <a href="/pitch/comment/new/{{pitch.id}}" class="btn btn-primary">Add your comment</a>
          
         </div>
       </div>
@@ -45,7 +48,7 @@
     </li>
     
 {% endfor %}
-<input type="Submit" text="Add a comment">
+<button> </button>
         </ul>
         </div>
 </div>

@@ -13,8 +13,7 @@ def index():
     pitch_list = Pitch.query.all()
 
     for pitch in pitch_list:
-        print(pitch)
-   
+          
     return render_template('index.html', pitch_list=pitch_list)
 
 @main.route('/pitch/comment/new/<int:id>', methods=['GET', 'POST'])
@@ -25,15 +24,17 @@ def new_comment(id):
     '''
     form = CommentForm()
     pitch = get_pitch(id)
+    
     if form.validate_on_submit():
-        title = form.title.data
-        comment = form.review.data
+        pitch_comment = form.pitch_comment.data
+        user_id = form.user_id.data
 
         # Updated comment instance
-        new_review = Review(movie_id=movie.id,movie_title=title,image_path=movie.poster,movie_review=review,user=current_user)
+        new_comment = Comment(comment.pitch_id = pitch,comment.pitch_comment = pitch_comment,comment.user_id = user_id)
 
         # save comment method
-        new_comment.save_review()
+        db.session.add(new_comment)
+        db.session.commit()
         return redirect(url_for('.comment',id = comment.id ))
 
     title = f'{movie.title} comment'
