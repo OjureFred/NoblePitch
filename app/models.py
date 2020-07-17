@@ -32,7 +32,7 @@ class User(UserMixin, db.Model):
     email = db.Column(db.String(255), unique = True, index = True)
     role_id = db.Column(db.Integer, db.ForeignKey('roles.id'))
     pass_secure = db.Column(db.String(255))
-    comments = db.relationship('Comment', backref = 'user', lazy = "dynamic")
+    #comments = db.relationship('Comment', backref = 'user', lazy = "dynamic")
 
     def __repr__(self):
         return f'User {self.username}'
@@ -73,7 +73,8 @@ class Comment(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     pitch_id = db.Column(db.Integer)
     pitch_comment = db.Column(db.String(255))
-    user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
+    user_id = db.Column(db.Integer)
+    #db.ForeignKey("users.id"))
 
     def save_comment(self):
         db.session.add(self)
