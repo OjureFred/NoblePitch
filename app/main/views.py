@@ -47,7 +47,7 @@ def list_comments(id):
     pitch = Pitch.query.filter_by(id=id).first()
     comments = Comment.filter_by(pitch_id=id).all()
     
-    return render_template('coments.html', pitch = pitch, comments = comments)
+    return render_template('comments.html', pitch = pitch, comments = comments)
 
 
 
