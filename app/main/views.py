@@ -1,7 +1,7 @@
 from flask import render_template, request, redirect, url_for
 from flask_login import login_required, current_user
 from . import main
-#from .forms import PitchForm
+import markdown2
 from ..models import Pitch, User, Comment
 from .. import db 
 
@@ -47,7 +47,16 @@ def list_comments(id):
     pitch = Pitch.query.filter_by(id=id).first()
     comments = Comment.query.filter_by(pitch_id=id).all()
     
-    return render_template('comments.html', pitch = pitch, comments = comments)
+    return render_template('comments.html', pitch=pitch, comments=comments)
+    
+@main.route('comment/<int:id>')
+def single_comment(id):
+    comment = Comment.query.get(id)
+    if comment is None:
+        abort(404)
+    format_comment = markdown2.markdown(comment.pitch_comment, extras=["code-friendly", "fenced-code-blocks"])
+    return render_template('comment_r.html' comment = comment, format_comment = format_comment)
+
 
 
 

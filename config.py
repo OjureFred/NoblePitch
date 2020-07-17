@@ -8,6 +8,10 @@ class Config:
     SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://postgres:admin@localhost/pitches'
     UPLOADED_PHOTOS_DEST = 'app/static/photos'
 
+    #Simple MDE configurations
+    SIMPLEMDE_JS_IIFE = True
+    SIMPLEMDE_USE_CDN = True
+
     #  email configurations
     MAIL_SERVER = 'smtp.googlemail.com'
     MAIL_PORT = 587
