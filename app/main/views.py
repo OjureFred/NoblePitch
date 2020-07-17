@@ -45,7 +45,7 @@ def list_comments(id):
     Function to retrieve comment for a pitch
     '''
     pitch = Pitch.query.filter_by(id=id).first()
-    comments = Comment.filter_by(pitch_id=id).all()
+    comments = Comment.query.filter_by(pitch_id=id).all()
     
     return render_template('comments.html', pitch = pitch, comments = comments)
 
