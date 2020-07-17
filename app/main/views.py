@@ -2,6 +2,7 @@ from flask import render_template, request, redirect, url_for
 from flask_login import login_required, current_user
 from . import main
 import markdown2
+from .forms import CommentForm
 from ..models import Pitch, User, Comment
 from .. import db 
 
@@ -16,28 +17,22 @@ def index():
     return render_template('index.html', pitch_list=pitch_list)
 
 @main.route('/pitch/comment/new/<int:id>', methods=['GET', 'POST'])
-@login_required
 def new_comment(id):
     '''
     Function to allow a user add a comment
     '''
     form = CommentForm()
-    pitch = get_pitch(id)
-    
     if form.validate_on_submit():
-        pitch_comment = form.pitch_comment.data
-        user_id = form.user_id.data
+       # Updated comment instance
+       new_comment = Comment(pitch_id = id, pitch_comment = form.pitch_comment.data, user_id = form.user_id.data)
 
-        # Updated comment instance
-        new_comment = Comment(comment.pitch_id = pitch,comment.pitch_comment = pitch_comment,comment.user_id = user_id)
+       # save comment method
+       db.session.add(new_comment)
+       db.session.commit()
+       return redirect(url_for('main.index'))
 
-        # save comment method
-        db.session.add(new_comment)
-        db.session.commit()
-        return redirect(url_for('.comment',id = comment.id ))
-
-    title = f'{movie.title} comment'
-    return render_template('new_comment.html', title=title, review_form=form, movie=movie)
+    title = 'New comment'
+    return render_template('new_comment.html', title=title)
     
 @main.route('/pitch/<int:id>', methods=['GET', 'POST'])
 def list_comments(id):
