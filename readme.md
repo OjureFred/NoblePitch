@@ -18,10 +18,11 @@ Since this a python project, clone into your current machine and follow these st
 
 To run the software, you need the following prerequisites:
 
-1. Any Linux distro or windows
+1. Any Linux distro or windows 10
 2. Python3.x
 3. Postgresql - latest version
 4. Postgresql drivers for python
+5. SQLAlchemy
 
 ```
 ### Running the tests
