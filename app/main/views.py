@@ -49,13 +49,14 @@ def list_comments(id):
     
     return render_template('comments.html', pitch=pitch, comments=comments)
     
-@main.route('comment/<int:id>')
+@main.route('/comment/<int:id>')
 def single_comment(id):
     comment = Comment.query.get(id)
     if comment is None:
         abort(404)
+
     format_comment = markdown2.markdown(comment.pitch_comment, extras=["code-friendly", "fenced-code-blocks"])
-    return render_template('comment_r.html' comment = comment, format_comment = format_comment)
+    return render_template('comment_r.html', comment = comment, format_comment = format_comment)
 
 
 
