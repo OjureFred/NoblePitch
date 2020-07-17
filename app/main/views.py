@@ -2,7 +2,7 @@ from flask import render_template, request, redirect, url_for
 from flask_login import login_required, current_user
 from . import main
 import markdown2
-from .forms import CommentForm
+from .forms import CommentForm, PitchForm
 from ..models import Pitch, User, Comment
 from .. import db 
 
@@ -34,7 +34,7 @@ def new_comment(id):
     title = 'New comment'
     return render_template('new_comment.html', title=title, comment_form=form)
     
-@main.route('/pitch/new', methods=['GET', 'POST'])
+@main.route('/pitch/new/', methods=['GET', 'POST'])
 def new_pitch():
     '''
     Function to allow a user add a new pitch
