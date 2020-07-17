@@ -26,12 +26,10 @@ def register():
         user = User(email = form.email.data, username = form.username.data,password = form.password.data)
         db.session.add(user)
         db.session.commit()
-
-       return redirect(url_for('auth.login'))
-        
+        return redirect(url_for('auth.login'))
         title = "New Account"
 
-    return render_template('auth/register.html', registration_form=form)
+    return render_template('auth/register.html', registration_form =form)
 
 @auth.route('/logout')
 @login_required
