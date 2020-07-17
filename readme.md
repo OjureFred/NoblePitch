@@ -16,29 +16,15 @@ Since this a python project, clone into your current machine and follow these st
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+To run the software, you need the following prerequisites:
 
-```
-Give examples
-```
-
-### Installing --
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example
+1. Any Linux distro or windows
+2. Python3.x
+3. Postgresql - latest version
+4. Postgresql drivers for python
 ```
 
-And repeat
 
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
 
 ## Running the tests
 
