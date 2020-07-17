@@ -22,28 +22,18 @@ To run the software, you need the following prerequisites:
 2. Python3.x
 3. Postgresql - latest version
 4. Postgresql drivers for python
-```
-
-
-
-## Running the tests
-
-Model class each have a unit test class. You can run these using the python command. E.g python3.8 news.py
-
-### Break down into end to end tests
-
-Explain what these tests test and why
 
 ```
-Give an example
-```
+### Running the tests
+
+Model class each have a unit test class. You can run these using the python test shell. E.g python3.8 news.py
 
 ### And coding style tests
 
 No coding style tests are applied
 
 
-## Deployment
+### Deployment
 
 To deploy, follow these steps:
 
@@ -52,7 +42,7 @@ To deploy, follow these steps:
 3. Activate Flask environmet
 4. Install Twitter Bootstrap, Google Fonts, Coolers 
 
-## Built With
+### Built With
 
 -  [Python](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
 -  [Bootstrap](https://maven.apache.org/) - Dependency Management
@@ -60,17 +50,15 @@ To deploy, follow these steps:
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+None apart from author
 
 ## Versioning
 
-We use Github for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
+We use Github for versioning. Only one version released
 
 ## Authors
 
 -  **Fredrick Ojure** - _Initial work__
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
 ## License
 
