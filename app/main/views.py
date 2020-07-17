@@ -32,7 +32,7 @@ def new_comment(id):
        return redirect(url_for('main.index'))
 
     title = 'New comment'
-    return render_template('new_comment.html', title=title)
+    return render_template('new_comment.html', title=title, comment_form = form)
     
 @main.route('/pitch/<int:id>', methods=['GET', 'POST'])
 def list_comments(id):
